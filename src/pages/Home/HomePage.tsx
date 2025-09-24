@@ -13,6 +13,63 @@ import PostCard from '@features/posts/components/PostCard';
 import SkillBadge from '@features/skills/components/SkillBadge';
 import { Float, Reveal, ScaleOnHover } from 'react-bits';
 
+const quickStats = [
+  {
+    id: 'impact',
+    value: '48+',
+    label: 'Lanzamientos significativos',
+    description: 'Productos desplegados en producción, desde plataformas SaaS hasta experiencias inmersivas.'
+  },
+  {
+    id: 'growth',
+    value: '5x',
+    label: 'Crecimiento de conversión',
+    description: 'Incremento promedio tras rediseñar flujos críticos con métricas de funnel en mente.'
+  },
+  {
+    id: 'teams',
+    value: '12',
+    label: 'Equipos potenciados',
+    description: 'Liderando squads multidisciplinarios con metodologías de diseño colaborativo.'
+  },
+  {
+    id: 'timeline',
+    value: '10 años',
+    label: 'Construyendo experiencias',
+    description: 'Especializado en diseñar productos escalables y encantadores para empresas en crecimiento.'
+  }
+] as const;
+
+const designPillars = [
+  'Narrativas interactivas multidispositivo',
+  'Sistemas de diseño escalables con métricas',
+  'Animaciones con propósito y accesibilidad'
+] as const;
+
+const processTimeline = [
+  {
+    id: '01',
+    title: 'Descubrimiento inmersivo',
+    description:
+      'Workshops, shadowing y mapas de experiencia para detectar fricciones y oportunidades de alto impacto.',
+    outcome: 'Insight accionable'
+  },
+  {
+    id: '02',
+    title: 'Prototipado sensorial',
+    description:
+      'Flujos interactivos de alta fidelidad, micro-interacciones y pruebas moderadas para validar emociones y utilidad.',
+    outcome: 'Aprendizaje validado'
+  },
+  {
+    id: '03',
+    title: 'Delivery orquestado',
+    description:
+      'Documentación viva, sistemas de diseño componibles y métricas conectadas a observabilidad para un lanzamiento impecable.',
+    outcome: 'Entrega consistente'
+  }
+] as const;
+
 const HomePage = (): JSX.Element => {
   const { heroTitle, heroSubtitle, ctaPrimary, ctaSecondary, role } = personalInfo;
 
@@ -34,14 +91,18 @@ const HomePage = (): JSX.Element => {
   const topSkills = useMemo(() => skills.slice(0, 6), [skills]);
 
   return (
-    <div className="space-y-16">
-      <section className="grid gap-10 pt-6 lg:grid-cols-[1.5fr,1fr] lg:items-center">
-        <Reveal className="space-y-6">
-          <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
+    <div className="relative space-y-24 pb-20">
+      <div className="pointer-events-none absolute inset-x-0 -top-24 -z-10 mx-auto h-[420px] max-w-5xl rounded-full bg-gradient-to-br from-primary/20 via-transparent to-secondary/20 blur-3xl" />
+
+      <section className="grid gap-10 pt-6 lg:grid-cols-[1.45fr,1fr] lg:items-center">
+        <Reveal className="space-y-8">
+          <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-medium tracking-wide text-primary">
             {role} · Disponible para nuevos retos
           </span>
-          <h1 className="text-4xl font-bold leading-tight text-base-content md:text-5xl lg:text-6xl">{heroTitle}</h1>
-          <p className="text-lg text-base-content/70 md:text-xl">{heroSubtitle}</p>
+          <div className="space-y-4">
+            <h1 className="text-4xl font-bold leading-tight text-base-content md:text-5xl lg:text-6xl">{heroTitle}</h1>
+            <p className="text-lg text-base-content/70 md:text-xl">{heroSubtitle}</p>
+          </div>
           <div className="flex flex-wrap gap-3">
             <Link to={ctaPrimary.href} className={buttonStyles('primary', 'lg')}>
               {ctaPrimary.label}
@@ -50,76 +111,194 @@ const HomePage = (): JSX.Element => {
               {ctaSecondary.label}
             </Link>
           </div>
-          <div className="grid gap-4 sm:grid-cols-3">
-            {experienceTimeline.slice(0, 3).map((item) => (
-              <ScaleOnHover key={item.id}>
-                <Card className="h-full bg-base-100/80">
-                  <p className="text-xs uppercase tracking-wide text-primary/80">{item.period}</p>
-                  <h3 className="mt-2 text-base font-semibold text-base-content">{item.title}</h3>
-                  <p className="mt-3 text-sm text-base-content/70 line-clamp-3">{item.description}</p>
-                </Card>
-              </ScaleOnHover>
+          <ul className="grid gap-4 sm:grid-cols-3">
+            {designPillars.map((pillar) => (
+              <li key={pillar} className="group relative overflow-hidden rounded-2xl border border-base-200/60 bg-base-100/80 p-4 shadow-sm">
+                <div className="absolute inset-0 -z-10 bg-gradient-to-br from-primary/15 via-transparent to-secondary/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                <p className="text-sm font-medium text-base-content/80">{pillar}</p>
+              </li>
             ))}
-          </div>
+          </ul>
         </Reveal>
-        <Float duration={7000} amplitude={14} className="mx-auto w-full max-w-md">
-          <div className="rounded-[2.5rem] border border-base-200 bg-base-100/90 p-6 shadow-xl shadow-primary/10">
-            <div className="space-y-4">
-              <h2 className="text-2xl font-semibold text-base-content">Experiencia inmersiva</h2>
+        <Float duration={7000} amplitude={16} className="mx-auto w-full max-w-md">
+          <div className="relative overflow-hidden rounded-[2.75rem] border border-base-200/70 bg-base-100/95 p-8 shadow-xl shadow-primary/10">
+            <div className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-gradient-to-br from-primary/30 to-secondary/40 blur-2xl" aria-hidden="true" />
+            <div className="absolute -bottom-12 -left-12 h-40 w-40 rounded-full bg-gradient-to-br from-secondary/30 to-primary/20 blur-2xl" aria-hidden="true" />
+            <div className="relative space-y-4">
+              <p className="inline-flex items-center rounded-full bg-base-100/70 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+                Experiencias inmersivas
+              </p>
+              <h2 className="text-2xl font-semibold text-base-content">Diseño centrado en micro-interacciones</h2>
               <p className="text-base-content/70">
-                Interfaces animadas, arquitectura escalable y una obsesión por la micro-interacción. Así construyo productos que
-                la gente disfruta usar todos los días.
+                Arquitectura escalable, accesibilidad pragmática y animaciones con intención. Cada detalle del journey está diseñado para activar emoción y claridad desde el primer scroll.
               </p>
               <ul className="space-y-3 text-sm text-base-content/70">
-                <li>✔︎ Sistemas de diseño componibles</li>
-                <li>✔︎ Performance y observabilidad integrados</li>
-                <li>✔︎ Animaciones fluidas con foco en UX</li>
+                <li className="flex items-center gap-2">
+                  <span className="h-2 w-2 rounded-full bg-primary" /> Sistemas de diseño componibles y documentados
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="h-2 w-2 rounded-full bg-secondary" /> Performance, métricas y observabilidad integradas
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="h-2 w-2 rounded-full bg-accent" /> Animaciones fluidas con foco en UX y accesibilidad
+                </li>
               </ul>
             </div>
           </div>
         </Float>
       </section>
 
-      <section className="space-y-6">
-        <div className="flex items-center justify-between gap-4">
-          <h2 className="text-3xl font-semibold text-base-content">Proyectos recientes</h2>
-          <Link to="/projects" className={buttonStyles('ghost', 'sm')}>
-            Ver todos
-          </Link>
+      <section className="space-y-10">
+        <Reveal className="space-y-4">
+          <h2 className="text-3xl font-semibold text-base-content">Impacto medible en cada entrega</h2>
+          <p className="max-w-2xl text-base text-base-content/70">
+            Cada iniciativa se planifica con métricas de negocio y experiencia. Estos son algunos de los resultados recurrentes al diseñar productos centrados en las personas.
+          </p>
+        </Reveal>
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          {quickStats.map((stat, index) => (
+            <Reveal key={stat.id} delay={index * 80}>
+              <ScaleOnHover className="h-full">
+                <Card className="flex h-full flex-col justify-between bg-base-100/80 p-6 backdrop-blur">
+                  <div className="space-y-4">
+                    <span className="text-4xl font-semibold text-base-content">{stat.value}</span>
+                    <h3 className="text-lg font-semibold text-base-content/90">{stat.label}</h3>
+                    <p className="text-sm text-base-content/70">{stat.description}</p>
+                  </div>
+                  <div className="mt-6 h-1 rounded-full bg-gradient-to-r from-primary/70 via-secondary/70 to-accent/70" />
+                </Card>
+              </ScaleOnHover>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      <section className="space-y-8">
+        <div className="flex flex-wrap items-center justify-between gap-4">
+          <Reveal><h2 className="text-3xl font-semibold text-base-content">Proyectos recientes</h2></Reveal>
+          <Reveal delay={120}>
+            <Link to="/projects" className={buttonStyles('ghost', 'sm')}>
+              Ver todos
+            </Link>
+          </Reveal>
         </div>
         <div className="grid gap-8 md:grid-cols-2">
-          {highlightProjects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
+          {highlightProjects.map((project, index) => (
+            <Reveal key={project.id} delay={index * 120}>
+              <ProjectCard project={project} />
+            </Reveal>
           ))}
         </div>
       </section>
 
-      <section className="space-y-6">
-        <div className="flex items-center justify-between gap-4">
-          <h2 className="text-3xl font-semibold text-base-content">Últimas publicaciones</h2>
-          <Link to="/posts" className={buttonStyles('ghost', 'sm')}>
-            Leer más
-          </Link>
+      <section className="space-y-8">
+        <div className="flex flex-wrap items-center justify-between gap-4">
+          <Reveal><h2 className="text-3xl font-semibold text-base-content">Experiencia destacada</h2></Reveal>
+          <Reveal delay={120}>
+            <Link to="/about" className={buttonStyles('ghost', 'sm')}>
+              Ver trayectoria completa
+            </Link>
+          </Reveal>
+        </div>
+        <div className="relative">
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-base-100 to-transparent" aria-hidden="true" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-base-100 to-transparent" aria-hidden="true" />
+          <div className="flex snap-x gap-6 overflow-x-auto pb-6 pr-6 sm:pr-0">
+            {experienceTimeline.map((item, index) => (
+              <Reveal key={item.id} delay={index * 80} className="min-w-[280px] snap-center">
+                <Card className="h-full bg-base-100/80 p-6">
+                  <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary/80">{item.period}</p>
+                  <h3 className="mt-4 text-lg font-semibold text-base-content">{item.title}</h3>
+                  <p className="mt-3 text-sm text-base-content/70">{item.description}</p>
+                </Card>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="space-y-8">
+        <div className="flex flex-wrap items-center justify-between gap-4">
+          <Reveal><h2 className="text-3xl font-semibold text-base-content">Últimas publicaciones</h2></Reveal>
+          <Reveal delay={120}>
+            <Link to="/posts" className={buttonStyles('ghost', 'sm')}>
+              Leer más
+            </Link>
+          </Reveal>
         </div>
         <div className="grid gap-8 md:grid-cols-3">
-          {latestPosts.map((post) => (
-            <PostCard key={post.id} post={post} />
+          {latestPosts.map((post, index) => (
+            <Reveal key={post.id} delay={index * 120}>
+              <PostCard post={post} />
+            </Reveal>
           ))}
         </div>
       </section>
 
-      <section className="space-y-6">
-        <div className="flex items-center justify-between gap-4">
-          <h2 className="text-3xl font-semibold text-base-content">Stack principal</h2>
-          <Link to="/skills" className={buttonStyles('ghost', 'sm')}>
-            Ver todas las skills
-          </Link>
-        </div>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {topSkills.map((skill) => (
-            <SkillBadge key={skill.id} skill={skill} />
+      <section className="space-y-10">
+        <Reveal className="space-y-3">
+          <h2 className="text-3xl font-semibold text-base-content">Un proceso pensado para sorprender</h2>
+          <p className="max-w-2xl text-base text-base-content/70">
+            Desde el primer contacto hasta el lanzamiento, diseño experiencias memorables y coherentes. Así conecto estrategia, diseño y ejecución.
+          </p>
+        </Reveal>
+        <div className="grid gap-6 md:grid-cols-3">
+          {processTimeline.map((step, index) => (
+            <Reveal key={step.id} delay={index * 120}>
+              <ScaleOnHover className="h-full">
+                <Card className="flex h-full flex-col justify-between bg-base-100/85 p-6">
+                  <div className="space-y-4">
+                    <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+                      Fase {step.id}
+                    </span>
+                    <h3 className="text-lg font-semibold text-base-content">{step.title}</h3>
+                    <p className="text-sm text-base-content/70">{step.description}</p>
+                  </div>
+                  <div className="mt-6 flex items-center justify-between text-xs font-semibold uppercase tracking-[0.3em] text-base-content/60">
+                    <span>Resultado</span>
+                    <span className="text-primary">{step.outcome}</span>
+                  </div>
+                </Card>
+              </ScaleOnHover>
+            </Reveal>
           ))}
         </div>
+      </section>
+
+      <section className="space-y-8">
+        <div className="flex flex-wrap items-center justify-between gap-4">
+          <Reveal><h2 className="text-3xl font-semibold text-base-content">Stack principal</h2></Reveal>
+          <Reveal delay={120}>
+            <Link to="/skills" className={buttonStyles('ghost', 'sm')}>
+              Ver todas las skills
+            </Link>
+          </Reveal>
+        </div>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {topSkills.map((skill, index) => (
+            <Reveal key={skill.id} delay={index * 80}>
+              <SkillBadge skill={skill} />
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      <section className="relative overflow-hidden rounded-3xl border border-primary/10 bg-gradient-to-br from-primary/10 via-base-100 to-secondary/10 p-10 text-base-content shadow-xl">
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.25),transparent_60%)]" aria-hidden="true" />
+        <Reveal className="space-y-6">
+          <h2 className="text-3xl font-semibold md:text-4xl">¿Listo para elevar la siguiente experiencia digital?</h2>
+          <p className="max-w-3xl text-base-content/70 md:text-lg">
+            Conecto estrategia, diseño y código para lanzar productos memorables. Hablemos sobre cómo podemos construir algo extraordinario para tu audiencia.
+          </p>
+          <div className="flex flex-wrap gap-3">
+            <Link to="/contact" className={buttonStyles('primary', 'lg')}>
+              Reservar una sesión estratégica
+            </Link>
+            <Link to="/explore" className={buttonStyles('ghost', 'lg')}>
+              Explorar estudios de caso
+            </Link>
+          </div>
+        </Reveal>
       </section>
     </div>
   );

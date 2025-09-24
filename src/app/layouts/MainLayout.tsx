@@ -6,6 +6,7 @@ import Footer from '@widgets/Footer';
 import Navbar from '@widgets/Navbar';
 import Sidebar from '@widgets/Sidebar';
 import { useUIStore } from '@stores/uiStore';
+import ScrollProgressBar from '@shared/components/ScrollProgressBar';
 
 const MainLayout = () => {
   const navigation = useNavigation();
@@ -20,6 +21,7 @@ const MainLayout = () => {
 
   return (
     <div className="min-h-screen bg-base-100 text-base-content transition-colors">
+      <ScrollProgressBar />
       <Navbar />
       <Sidebar />
       <main className="relative mx-auto flex min-h-[70vh] max-w-6xl flex-1 flex-col px-4 pb-20 pt-24 md:px-8">
