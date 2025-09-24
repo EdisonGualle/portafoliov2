@@ -46,7 +46,7 @@ const ContactPage = (): JSX.Element => {
           <div className="pointer-events-none absolute inset-0 -z-10 bg-hero-glow opacity-70" aria-hidden="true" />
           <h1 className="text-4xl font-bold text-base-content">Construyamos algo memorable</h1>
           <p className="mt-3 text-lg text-base-content/70">
-            Cuéntame sobre tu proyecto, equipo o idea. Colaboremos para diseñar productos que conecten tecnología, negocio y emoción.
+            Soy Edison Gualle. Cuéntame sobre tu proyecto, equipo o idea y diseñemos juntos productos que conecten tecnología, negocio y emoción.
           </p>
         </div>
         <div className="grid gap-4 sm:grid-cols-2">

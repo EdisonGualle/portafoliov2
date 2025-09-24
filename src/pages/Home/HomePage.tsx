@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { buttonStyles } from '@shared/components/Button';
@@ -12,58 +12,141 @@ import ProjectCard from '@features/projects/components/ProjectCard';
 import PostCard from '@features/posts/components/PostCard';
 import SkillBadge from '@features/skills/components/SkillBadge';
 import { Float, Reveal, ScaleOnHover } from 'react-bits';
+import { cn } from '@shared/utils/cn';
 
 const quickStats = [
   {
     id: 'impact',
-    value: '48+',
-    label: 'Lanzamientos significativos',
-    description: 'Productos end-to-end desplegados con métricas claras de adopción.'
+    value: '42',
+    label: 'Lanzamientos guiados',
+    description: 'Productos end-to-end desplegados con métricas de adopción claras y seguimiento post-release.'
   },
   {
     id: 'growth',
-    value: '5x',
-    label: 'Crecimiento de conversión',
-    description: 'Promedio tras rediseñar journeys críticos y medir iteraciones.'
+    value: '4.7x',
+    label: 'Impulso en conversión',
+    description: 'Iteraciones sobre journeys críticos que conectan UX con objetivos de negocio.'
   },
   {
     id: 'teams',
-    value: '12',
-    label: 'Equipos potenciados',
-    description: 'Squads guiados con ceremonias de diseño y discovery continuo.'
+    value: '14',
+    label: 'Equipos acompañados',
+    description: 'Squads potenciados con rituales de discovery, design ops y documentación viva.'
   },
   {
     id: 'timeline',
     value: '10 años',
     label: 'Construyendo experiencias',
-    description: 'Diseño escalable con foco en accesibilidad, performance y emoción.'
+    description: 'Una década integrando estrategia, visuales y código con foco en accesibilidad.'
   }
 ] as const;
 
 const heroHighlights = [
-  'Diseño de productos SaaS y experiencias inmersivas',
-  'Sistemas de diseño componibles con documentación viva',
-  'Workshops, research y analítica para iterar con intención'
+  'Ingeniería frontend con visión de producto',
+  'Design systems vivos y documentados',
+  'Discovery continuo + métricas accionables'
 ] as const;
 
 const processTimeline = [
   {
     id: '01',
     title: 'Descubrimiento inmersivo',
-    description: 'Co-creación con stakeholders, mapeo de journeys y priorización de valor.',
+    description: 'Alineación con stakeholders, research con usuarios y priorización basada en datos.',
     outcome: 'Insight accionable'
   },
   {
     id: '02',
-    title: 'Prototipado sensorial',
-    description: 'Prototipos de alta fidelidad, pruebas con usuarios y experimentos medibles.',
+    title: 'Diseño y prototipado inmersivo',
+    description: 'Prototipos de alta fidelidad, experimentos medibles y validaciones constantes.',
     outcome: 'Aprendizaje validado'
   },
   {
     id: '03',
     title: 'Delivery orquestado',
-    description: 'Design systems robustos, handoff impecable y métricas conectadas.',
+    description: 'Design systems robustos, handoff bilingüe y métricas conectadas a negocio.',
     outcome: 'Entrega consistente'
+  }
+] as const;
+
+const themePresets = [
+  {
+    id: 'aurora',
+    label: 'Aurora Tech',
+    description: 'Energía vibrante para productos visionarios.',
+    gradient: 'from-primary/80 via-secondary/75 to-accent/90',
+    border: 'border-primary/50',
+    accent: 'text-secondary'
+  },
+  {
+    id: 'atlantic',
+    label: 'Onda Ártica',
+    description: 'Paleta fría con sensación futurista y ligera.',
+    gradient: 'from-sky-500/80 via-cyan-400/70 to-emerald-400/75',
+    border: 'border-cyan-200/50',
+    accent: 'text-emerald-200'
+  },
+  {
+    id: 'noir',
+    label: 'Nocturno',
+    description: 'Minimalismo sofisticado para conversaciones ejecutivas.',
+    gradient: 'from-slate-900 via-midnightMuted/90 to-slate-800/90',
+    border: 'border-white/25',
+    accent: 'text-white'
+  }
+] as const;
+
+const languagePresets = [
+  {
+    id: 'es',
+    label: 'Español',
+    greeting: 'Hola, soy Edison 👋',
+    pitch:
+      'Impulso experiencias digitales end-to-end para equipos latinos y globales, conectando estrategia y craft.',
+    description: 'Narrativa nativa y documentación en español.',
+    microcopy: 'Comunicación transparente, documentación bilingüe y entrega impecable.',
+    ctaLabel: 'Agenda una llamada'
+  },
+  {
+    id: 'en',
+    label: 'English',
+    greeting: "Hey, I'm Edison 👋",
+    pitch: 'I craft purposeful digital products for teams that expect clarity, craft and measurable growth.',
+    description: 'Tone of voice y entregables en inglés.',
+    microcopy: 'Seamless bilingual handoff, KPI alignment and scalable design systems.',
+    ctaLabel: 'Book a discovery call'
+  }
+] as const;
+
+const focusModes = [
+  {
+    id: 'product',
+    label: 'Producto digital',
+    description: 'Ideal para SaaS y plataformas con roadmaps agresivos.',
+    highlights: [
+      'Discovery continuo con usuarios reales',
+      'Roadmaps medibles conectados a KPIs',
+      'DesignOps integrado al ciclo de desarrollo'
+    ]
+  },
+  {
+    id: 'teams',
+    label: 'Equipos in-house',
+    description: 'Coaching técnico y diseño de sistemas para escalar equipos internos.',
+    highlights: [
+      'Playbooks para escuadrones multidisciplinarios',
+      'Mentorías y workshops especializados',
+      'Sistema de diseño con librerías compartidas'
+    ]
+  },
+  {
+    id: 'launch',
+    label: 'Lanzamientos rápidos',
+    description: 'MVPs listos para validar mercado y crecer con solidez.',
+    highlights: [
+      'Narrativa y visuales listos para marketing',
+      'Arquitectura escalable desde el día uno',
+      'Ciclos de iteración cortos con analítica conectada'
+    ]
   }
 ] as const;
 
@@ -86,6 +169,22 @@ const HomePage = (): JSX.Element => {
   const highlightProjects = useMemo(() => featured.slice(0, 2), [featured]);
   const latestPosts = useMemo(() => posts.slice(0, 3), [posts]);
   const topSkills = useMemo(() => skills.slice(0, 6), [skills]);
+  const [selectedTheme, setSelectedTheme] = useState(themePresets[0].id);
+  const [selectedLanguage, setSelectedLanguage] = useState(languagePresets[0].id);
+  const [selectedFocus, setSelectedFocus] = useState(focusModes[0].id);
+
+  const activeTheme = useMemo(
+    () => themePresets.find((preset) => preset.id === selectedTheme) ?? themePresets[0],
+    [selectedTheme]
+  );
+  const activeLanguage = useMemo(
+    () => languagePresets.find((option) => option.id === selectedLanguage) ?? languagePresets[0],
+    [selectedLanguage]
+  );
+  const activeFocus = useMemo(
+    () => focusModes.find((mode) => mode.id === selectedFocus) ?? focusModes[0],
+    [selectedFocus]
+  );
 
   return (
     <div className="relative space-y-24 pb-24">
@@ -188,6 +287,122 @@ const HomePage = (): JSX.Element => {
               </ScaleOnHover>
             </Reveal>
           ))}
+        </div>
+      </section>
+
+      <section className="space-y-10">
+        <Reveal className="space-y-3">
+          <h2 className="text-3xl font-semibold text-base-content">Personaliza la experiencia</h2>
+          <p className="max-w-3xl text-base text-base-content/70">
+            Experimenta con la narrativa, el lenguaje y la estética que mejor conectan con tu equipo. Este panel refleja cómo adapto cada colaboración a su contexto.
+          </p>
+        </Reveal>
+        <div className="grid gap-8 lg:grid-cols-[1.25fr,1fr]">
+          <Card className="space-y-8 border-white/30 bg-white/55 dark:border-white/10 dark:bg-white/5" hoverable={false}>
+            <div className="space-y-5">
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-base-content/60">Paletas</p>
+              <div className="grid gap-3 sm:grid-cols-3">
+                {themePresets.map((preset) => (
+                  <button
+                    key={preset.id}
+                    type="button"
+                    onClick={() => setSelectedTheme(preset.id)}
+                    className={cn(
+                      'flex flex-col items-start gap-2 rounded-2xl border px-4 py-3 text-left transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40',
+                      selectedTheme === preset.id
+                        ? 'border-primary/60 bg-primary/15 text-primary shadow-glow dark:border-primary/70 dark:bg-primary/20 dark:text-primary-foreground'
+                        : 'border-white/25 bg-white/60 text-base-content/80 hover:border-primary/40 hover:bg-primary/10 hover:text-primary dark:border-white/10 dark:bg-white/5 dark:text-base-content/70 dark:hover:border-primary/60 dark:hover:bg-primary/20'
+                    )}
+                  >
+                    <span className="text-sm font-semibold">{preset.label}</span>
+                    <span className="text-xs text-base-content/60">{preset.description}</span>
+                    <span className={cn('h-1.5 w-full rounded-full bg-gradient-to-r', preset.gradient)} aria-hidden="true" />
+                  </button>
+                ))}
+              </div>
+            </div>
+            <div className="space-y-5">
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-base-content/60">Lenguaje</p>
+              <div className="grid gap-3 sm:grid-cols-2">
+                {languagePresets.map((option) => (
+                  <button
+                    key={option.id}
+                    type="button"
+                    onClick={() => setSelectedLanguage(option.id)}
+                    className={cn(
+                      'flex flex-col items-start gap-2 rounded-2xl border px-4 py-3 text-left transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary/40',
+                      selectedLanguage === option.id
+                        ? 'border-secondary/60 bg-secondary/15 text-secondary shadow-glow-secondary dark:border-secondary/70 dark:bg-secondary/20 dark:text-slate-900'
+                        : 'border-white/25 bg-white/60 text-base-content/80 hover:border-secondary/40 hover:bg-secondary/10 hover:text-secondary dark:border-white/10 dark:bg-white/5 dark:text-base-content/70 dark:hover:border-secondary/60 dark:hover:bg-secondary/20'
+                    )}
+                  >
+                    <span className="text-sm font-semibold">{option.label}</span>
+                    <span className="text-xs text-base-content/60">{option.description}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+            <div className="space-y-5">
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-base-content/60">Enfoque</p>
+              <div className="grid gap-3 sm:grid-cols-3">
+                {focusModes.map((mode) => (
+                  <button
+                    key={mode.id}
+                    type="button"
+                    onClick={() => setSelectedFocus(mode.id)}
+                    className={cn(
+                      'flex flex-col items-start gap-2 rounded-2xl border px-4 py-3 text-left transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40',
+                      selectedFocus === mode.id
+                        ? 'border-accent/70 bg-accent/15 text-accent shadow-glow-accent dark:border-accent/80 dark:bg-accent/25 dark:text-slate-900'
+                        : 'border-white/25 bg-white/60 text-base-content/80 hover:border-accent/50 hover:bg-accent/10 hover:text-accent dark:border-white/10 dark:bg-white/5 dark:text-base-content/70 dark:hover:border-accent/60 dark:hover:bg-accent/20'
+                    )}
+                  >
+                    <span className="text-sm font-semibold">{mode.label}</span>
+                    <span className="text-xs text-base-content/60">{mode.description}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          </Card>
+          <div className="relative">
+            <div className="pointer-events-none absolute -inset-16 bg-hero-glow opacity-60 blur-3xl" aria-hidden="true" />
+            <div
+              className={cn(
+                'relative overflow-hidden rounded-[2.5rem] border bg-slate-950/90 p-10 text-white shadow-2xl backdrop-blur-lg',
+                activeTheme.border
+              )}
+            >
+              <div className={cn('absolute inset-0 -z-10 bg-gradient-to-br opacity-90', activeTheme.gradient)} aria-hidden="true" />
+              <div className="space-y-6">
+                <span className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white/80">
+                  {activeFocus.label}
+                </span>
+                <div className="space-y-3">
+                  <p className="text-3xl font-semibold leading-tight">{activeLanguage.greeting}</p>
+                  <p className="text-white/75">{activeLanguage.pitch}</p>
+                </div>
+                <ul className="space-y-3 text-sm text-white/80">
+                  {activeFocus.highlights.map((highlight) => (
+                    <li key={highlight} className="flex items-start gap-3">
+                      <span className="mt-1 h-2 w-2 flex-none rounded-full bg-white/90" aria-hidden="true" />
+                      <span>{highlight}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Link
+                  to="/contact"
+                  className={cn(buttonStyles('primary', 'md'), 'w-full justify-center text-base font-semibold shadow-glow')}
+                >
+                  {activeLanguage.ctaLabel}
+                </Link>
+                <div className="space-y-1 text-xs text-white/70">
+                  <p className="font-semibold uppercase tracking-[0.3em]">Tema {activeTheme.label}</p>
+                  <p>{activeTheme.description}</p>
+                  <p className="text-white/60">{activeLanguage.microcopy}</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
