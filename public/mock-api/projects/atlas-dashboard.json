@@ -1,0 +1,25 @@
+{
+  "id": "atlas-dashboard",
+  "slug": "atlas-dashboard",
+  "title": "Atlas Dashboard",
+  "summary": "Suite analítica en tiempo real para equipos de producto.",
+  "description": "Plataforma modular que centraliza métricas, experimentos A/B y feedback de usuarios.",
+  "longDescription": "Atlas Dashboard nace para unificar la mirada estratégica de los equipos de producto. Construí un sistema de paneles composables donde cada widget puede configurarse y compartirse entre squads.",
+  "technologies": ["React", "Zustand", "TailwindCSS", "D3.js"],
+  "tags": ["Product Analytics", "Data Visualization"],
+  "cover": "https://images.unsplash.com/photo-1523475472560-d2df97ec485c?auto=format&fit=crop&w=1600&q=80",
+  "liveUrl": "https://atlas-dashboard.app",
+  "repoUrl": "https://github.com/example/atlas-dashboard",
+  "highlight": "Dashboard interactivo",
+  "problem": "La empresa necesitaba una sola fuente de verdad que conectara métricas cuantitativas y feedback cualitativo sin depender del equipo de datos.",
+  "solution": "Diseñé una arquitectura basada en módulos que consumen un data-layer unificado. Implementé theming con Tailwind y motion reactivo para guiar la interpretación de métricas.",
+  "outcomes": [
+    "Reducción del tiempo de análisis semanal en un 45%",
+    "Aumento del engagement del equipo ejecutivo gracias a narrativas interactivas",
+    "Integración con pipelines de datos en menos de dos semanas"
+  ],
+  "insights": [
+    "Los dashboards deben contar historias: los microdetalles importan tanto como los datos.",
+    "La colaboración mejora cuando cada equipo puede crear vistas personalizadas sin perder consistencia."
+  ]
+}

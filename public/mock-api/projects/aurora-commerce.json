@@ -1,0 +1,25 @@
+{
+  "id": "aurora-commerce",
+  "slug": "aurora-commerce",
+  "title": "Aurora Commerce",
+  "summary": "Experiencia e-commerce headless con personalización dinámica.",
+  "description": "Arquitectura composable commerce con storefront ultra rápida.",
+  "longDescription": "Aurora Commerce redefine la experiencia de compra conectando un backend headless con un storefront animado y accesible.",
+  "technologies": ["React", "Vite", "GraphQL", "TailwindCSS"],
+  "tags": ["E-commerce", "Performance"],
+  "cover": "https://images.unsplash.com/photo-1515169067865-5387ec356754?auto=format&fit=crop&w=1600&q=80",
+  "liveUrl": "https://aurora-commerce.dev",
+  "repoUrl": "https://github.com/example/aurora-commerce",
+  "highlight": "Headless storefront",
+  "problem": "El equipo necesitaba iterar campañas sin depender del equipo backend y mantener tiempos de carga sub 1s.",
+  "solution": "Implementé un design system con theming estacional, SSR con streaming y microinteracciones que comunican cambios de estado.",
+  "outcomes": [
+    "Incremento del ratio de conversión en un 18%",
+    "Carga inicial de 780ms en dispositivos móviles de gama media",
+    "Integración de CMS headless para marketing en 3 semanas"
+  ],
+  "insights": [
+    "Las experiencias de compra se benefician de microcopys contextuales.",
+    "El performance no está reñido con las animaciones si se planifican desde el inicio."
+  ]
+}

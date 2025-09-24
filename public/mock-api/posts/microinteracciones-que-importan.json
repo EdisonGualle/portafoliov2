@@ -1,0 +1,11 @@
+{
+  "id": "microinteracciones-que-importan",
+  "slug": "microinteracciones-que-importan",
+  "title": "Microinteracciones que importan",
+  "excerpt": "Decisiones de animación que mejoran la experiencia sin distraer.",
+  "publishedAt": "2024-05-15",
+  "tags": ["Animación", "UX"],
+  "readingTime": "5 min",
+  "heroImage": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80",
+  "content": "## Diseña microinteracciones con intención\n\nUna animación no es decoración, es comunicación. **Las microinteracciones reducen fricción** y ayudan a comprender qué está ocurriendo en pantalla.\n\n### Checklist de diseño\n- Define el propósito: feedback, confirmación o transición.\n- Ajusta duración y timing a la personalidad de tu marca.\n- Considera accesibilidad: ofrece alternativas sin movimiento excesivo.\n\n### Ejemplos prácticos\n1. Botones que responden con latencia percibida cuando llamas a un API.\n2. Badges que celebran logros con pequeños destellos.\n3. Skeletons que transicionan con desvanecimientos suaves.\n\n> Las personas recuerdan cómo los productos las hicieron sentir. Una microinteracción alineada a la narrativa refuerza esa memoria."
+}

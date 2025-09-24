@@ -1,0 +1,11 @@
+{
+  "id": "arquitectura-react-escala",
+  "slug": "arquitectura-react-escala",
+  "title": "Arquitectura React para equipos en escala",
+  "excerpt": "Patrones, dominios y decisiones que mantienen a raya la complejidad.",
+  "publishedAt": "2024-08-02",
+  "tags": ["Arquitectura", "React"],
+  "readingTime": "8 min",
+  "heroImage": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80",
+  "content": "## Domina el dominio antes del código\n\nCuando un producto escala, la modularidad es tu mejor aliada. Propongo **arquitectura por dominios** donde cada feature es autónoma pero conversa con el resto mediante contratos claros.\n\n### Estructura base\n- `app/` orquesta providers, layout y router.\n- `features/` encapsula lógica, UI y datos de cada módulo.\n- `shared/` contiene piezas reutilizables sin conocer el dominio.\n\n### Aprendizajes\n> Los límites explícitos evitan dependencias circulares y discusiones interminables.\n\n- Usa stores locales para UI y Zustand para estados globales.\n- Define servicios como puentes entre el mundo externo y tus features.\n- Documenta decisiones arquitectónicas con ADRs cortos.\n\nCon esta estructura, nuevos equipos se suman en días y no en semanas."
+}

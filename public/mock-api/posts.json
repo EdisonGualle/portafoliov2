@@ -1,0 +1,32 @@
+[
+  {
+    "id": "design-systems-conversacionales",
+    "slug": "design-systems-conversacionales",
+    "title": "Design systems conversacionales",
+    "excerpt": "Cómo diseñar componentes que dialogan con las personas y se adaptan al contexto.",
+    "publishedAt": "2024-11-18",
+    "tags": ["Design Systems", "UX Writing"],
+    "readingTime": "6 min",
+    "cover": "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    "id": "arquitectura-react-escala",
+    "slug": "arquitectura-react-escala",
+    "title": "Arquitectura React para equipos en escala",
+    "excerpt": "Patrones, dominios y decisiones que mantienen a raya la complejidad.",
+    "publishedAt": "2024-08-02",
+    "tags": ["Arquitectura", "React"],
+    "readingTime": "8 min",
+    "cover": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    "id": "microinteracciones-que-importan",
+    "slug": "microinteracciones-que-importan",
+    "title": "Microinteracciones que importan",
+    "excerpt": "Decisiones de animación que mejoran la experiencia sin distraer.",
+    "publishedAt": "2024-05-15",
+    "tags": ["Animación", "UX"],
+    "readingTime": "5 min",
+    "cover": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80"
+  }
+]

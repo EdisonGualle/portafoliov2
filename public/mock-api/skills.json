@@ -1,0 +1,58 @@
+[
+  {
+    "id": "react",
+    "name": "React 19",
+    "level": "Experto",
+    "category": "Frontend",
+    "description": "Arquitectura modular, server components experimentales y rendering híbrido."
+  },
+  {
+    "id": "tailwind",
+    "name": "TailwindCSS",
+    "level": "Experto",
+    "category": "Frontend",
+    "description": "Diseño atómico, theming avanzado y automatización de design tokens."
+  },
+  {
+    "id": "zustand",
+    "name": "Zustand",
+    "level": "Avanzado",
+    "category": "Frontend",
+    "description": "Gestión de estado escalable con slices, middlewares y persistencia."
+  },
+  {
+    "id": "animations",
+    "name": "Animaciones UI",
+    "level": "Avanzado",
+    "category": "UI/UX",
+    "description": "Transiciones narrativas, microinteracciones accesibles y motion design."
+  },
+  {
+    "id": "architecture",
+    "name": "Arquitectura Frontend",
+    "level": "Experto",
+    "category": "Frontend",
+    "description": "Domain driven design, modulación por features y pipelines CI/CD."
+  },
+  {
+    "id": "design-systems",
+    "name": "Design Systems",
+    "level": "Avanzado",
+    "category": "UI/UX",
+    "description": "Guías vivas, automatización de documentación y gobernanza multi-equipo."
+  },
+  {
+    "id": "graphql",
+    "name": "GraphQL",
+    "level": "Intermedio",
+    "category": "Backend",
+    "description": "Esquemas federados, caching inteligente y seguridad en APIs."
+  },
+  {
+    "id": "analytics",
+    "name": "Product Analytics",
+    "level": "Avanzado",
+    "category": "Data",
+    "description": "Definición de métricas, funnels y dashboards accionables."
+  }
+]
