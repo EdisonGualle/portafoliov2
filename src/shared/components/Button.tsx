@@ -6,11 +6,12 @@ const baseStyles =
   'inline-flex items-center justify-center gap-2 rounded-xl border font-medium transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 disabled:pointer-events-none disabled:opacity-60';
 
 const variants = {
-  primary: 'border-primary bg-primary text-primary-foreground shadow-lg shadow-primary/20 hover:-translate-y-0.5 hover:shadow-xl',
+  primary:
+    'border-primary bg-gradient-to-r from-primary via-aurora to-secondary text-primary-foreground shadow-lg shadow-primary/30 hover:-translate-y-0.5 hover:shadow-xl',
   secondary:
-    'border-transparent bg-base-200 text-base-content hover:-translate-y-0.5 hover:bg-base-300 hover:shadow-md',
+    'border-white/30 bg-white/60 text-base-content shadow-md hover:-translate-y-0.5 hover:border-primary/40 hover:bg-primary/10 dark:border-white/10 dark:bg-white/10',
   outline:
-    'border-base-300 bg-transparent text-base-content hover:border-primary hover:text-primary',
+    'border-white/40 bg-transparent text-base-content hover:border-primary hover:text-primary dark:border-white/20',
   ghost: 'border-transparent bg-transparent text-base-content/80 hover:text-primary hover:bg-primary/10'
 } as const;
 

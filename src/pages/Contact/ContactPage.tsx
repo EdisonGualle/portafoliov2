@@ -42,13 +42,15 @@ const ContactPage = (): JSX.Element => {
   return (
     <section className="grid gap-10 lg:grid-cols-[1.1fr,1fr]">
       <div className="space-y-6">
-        <h1 className="text-4xl font-bold text-base-content">Construyamos algo memorable</h1>
-        <p className="text-lg text-base-content/70">
-          Cuéntame sobre tu proyecto, equipo o idea. Me interesa colaborar en productos que combinen impacto, diseño y
-          tecnología.
-        </p>
+        <div className="relative overflow-hidden rounded-[2.5rem] border border-white/20 bg-white/40 px-6 py-8 shadow-glow backdrop-blur-xl dark:border-white/10 dark:bg-white/10">
+          <div className="pointer-events-none absolute inset-0 -z-10 bg-hero-glow opacity-70" aria-hidden="true" />
+          <h1 className="text-4xl font-bold text-base-content">Construyamos algo memorable</h1>
+          <p className="mt-3 text-lg text-base-content/70">
+            Cuéntame sobre tu proyecto, equipo o idea. Colaboremos para diseñar productos que conecten tecnología, negocio y emoción.
+          </p>
+        </div>
         <div className="grid gap-4 sm:grid-cols-2">
-          <Card className="bg-base-100/80">
+          <Card className="border-white/20 bg-white/45">
             <h2 className="text-xl font-semibold text-base-content">Servicios</h2>
             <ul className="mt-3 space-y-2 text-base-content/70">
               <li>· Consultoría en arquitectura frontend</li>
@@ -56,7 +58,7 @@ const ContactPage = (): JSX.Element => {
               <li>· Optimización de performance y accesibilidad</li>
             </ul>
           </Card>
-          <Card className="bg-base-100/80">
+          <Card className="border-white/20 bg-white/45">
             <h2 className="text-xl font-semibold text-base-content">Colaboración</h2>
             <ul className="mt-3 space-y-2 text-base-content/70">
               <li>· Equipos remotos y async</li>
@@ -67,7 +69,7 @@ const ContactPage = (): JSX.Element => {
         </div>
       </div>
 
-      <Card className="bg-base-100/80">
+      <Card className="border-white/20 bg-white/45">
         <form className="space-y-4" onSubmit={handleSubmit}>
           <div className="grid gap-4 sm:grid-cols-2">
             <label className="space-y-2 text-sm font-medium text-base-content">
@@ -78,7 +80,7 @@ const ContactPage = (): JSX.Element => {
                 value={form.name}
                 onChange={handleChange}
                 required
-                className="w-full rounded-xl border border-base-300 bg-base-100 px-3 py-2 focus:border-primary focus:outline-none"
+                className="w-full rounded-xl border border-white/30 bg-white/60 px-3 py-2 text-base-content shadow-inner focus:border-primary focus:outline-none dark:border-white/10 dark:bg-white/10"
               />
             </label>
             <label className="space-y-2 text-sm font-medium text-base-content">
@@ -89,7 +91,7 @@ const ContactPage = (): JSX.Element => {
                 value={form.email}
                 onChange={handleChange}
                 required
-                className="w-full rounded-xl border border-base-300 bg-base-100 px-3 py-2 focus:border-primary focus:outline-none"
+                className="w-full rounded-xl border border-white/30 bg-white/60 px-3 py-2 text-base-content shadow-inner focus:border-primary focus:outline-none dark:border-white/10 dark:bg-white/10"
               />
             </label>
           </div>
@@ -102,7 +104,7 @@ const ContactPage = (): JSX.Element => {
                 value={form.company}
                 onChange={handleChange}
                 placeholder="Opcional"
-                className="w-full rounded-xl border border-base-300 bg-base-100 px-3 py-2 focus:border-primary focus:outline-none"
+                className="w-full rounded-xl border border-white/30 bg-white/60 px-3 py-2 text-base-content shadow-inner focus:border-primary focus:outline-none dark:border-white/10 dark:bg-white/10"
               />
             </label>
             <label className="space-y-2 text-sm font-medium text-base-content">
@@ -113,7 +115,7 @@ const ContactPage = (): JSX.Element => {
                 value={form.budget}
                 onChange={handleChange}
                 placeholder="Opcional"
-                className="w-full rounded-xl border border-base-300 bg-base-100 px-3 py-2 focus:border-primary focus:outline-none"
+                className="w-full rounded-xl border border-white/30 bg-white/60 px-3 py-2 text-base-content shadow-inner focus:border-primary focus:outline-none dark:border-white/10 dark:bg-white/10"
               />
             </label>
           </div>
@@ -125,7 +127,7 @@ const ContactPage = (): JSX.Element => {
               onChange={handleChange}
               required
               rows={5}
-              className="w-full rounded-xl border border-base-300 bg-base-100 px-3 py-2 focus:border-primary focus:outline-none"
+              className="w-full rounded-xl border border-white/30 bg-white/60 px-3 py-2 text-base-content shadow-inner focus:border-primary focus:outline-none dark:border-white/10 dark:bg-white/10"
             />
           </label>
           <Button type="submit" loading={status === 'loading'} className="w-full">

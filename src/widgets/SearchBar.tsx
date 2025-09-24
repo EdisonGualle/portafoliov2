@@ -20,13 +20,13 @@ const SearchBar = (): JSX.Element => {
         value={query}
         onChange={handleChange}
         placeholder="Buscar proyectos, artículos o skills"
-        className="w-full rounded-2xl border border-base-300 bg-base-100 py-3 pl-11 pr-12 text-sm shadow-sm transition focus:border-primary focus:outline-none"
+        className="w-full rounded-2xl border border-white/30 bg-white/60 py-3 pl-11 pr-12 text-sm text-base-content shadow-inner transition focus:border-primary focus:outline-none dark:border-white/10 dark:bg-white/10"
       />
       {query && (
         <button
           type="button"
           onClick={clearSearch}
-          className="absolute right-3 top-1/2 flex h-7 w-7 -translate-y-1/2 items-center justify-center rounded-full bg-base-200 text-xs text-base-content/60 hover:bg-base-300"
+          className="absolute right-3 top-1/2 flex h-7 w-7 -translate-y-1/2 items-center justify-center rounded-full border border-white/30 bg-white/60 text-xs text-base-content/60 transition hover:bg-primary/10 hover:text-primary dark:border-white/10 dark:bg-white/10"
           aria-label="Limpiar búsqueda"
         >
           ×

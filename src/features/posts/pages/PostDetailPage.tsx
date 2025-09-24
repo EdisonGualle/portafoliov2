@@ -52,7 +52,9 @@ const PostDetailPage = (): JSX.Element => {
       <Link to="/posts" className={buttonStyles('ghost', 'sm')}>
         ← Ver más artículos
       </Link>
-      <PostDetail post={selectedPost} />
+      <div className="relative overflow-hidden rounded-[2.5rem] border border-white/20 bg-white/40 p-8 text-base-content shadow-glow backdrop-blur-xl dark:border-white/10 dark:bg-white/10">
+        <PostDetail post={selectedPost} />
+      </div>
     </div>
   );
 };

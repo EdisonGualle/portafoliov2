@@ -19,7 +19,7 @@ const PostDetail = ({ post }: PostDetailProps): JSX.Element => {
         <h1 className="text-4xl font-bold text-base-content lg:text-5xl">{post.title}</h1>
         <div className="flex flex-wrap gap-2">
           {post.tags.map((tag) => (
-            <span key={tag} className="badge badge-primary/80 bg-primary/10">
+            <span key={tag} className="badge border border-primary/30 bg-primary/10 text-primary">
               {tag}
             </span>
           ))}
