@@ -43,11 +43,14 @@ const ExplorePage = (): JSX.Element => {
 
   return (
     <section className="space-y-10">
-      <header className="space-y-3">
-        <h1 className="text-4xl font-bold text-base-content">Explora el universo creativo</h1>
-        <p className="max-w-2xl text-base-content/70">
-          Utiliza el buscador para encontrar proyectos, artículos o habilidades específicas. Todo mi trabajo, en un solo lugar.
-        </p>
+      <header className="relative overflow-hidden rounded-[2.5rem] border border-white/20 bg-white/40 px-6 py-10 text-base-content shadow-glow backdrop-blur-xl sm:px-12 dark:border-white/10 dark:bg-white/10">
+        <div className="pointer-events-none absolute inset-0 -z-10 bg-hero-glow opacity-70" aria-hidden="true" />
+        <div className="space-y-3">
+          <h1 className="text-4xl font-bold text-base-content md:text-5xl">Explora el universo creativo</h1>
+          <p className="max-w-2xl text-base-content/70">
+            Utiliza el buscador para encontrar proyectos, artículos o habilidades específicas. Todo mi trabajo, en un solo lugar.
+          </p>
+        </div>
       </header>
 
       <div className="space-y-6">
@@ -59,7 +62,7 @@ const ExplorePage = (): JSX.Element => {
         </div>
         <div className="grid gap-4 md:grid-cols-2">
           {filteredProjects.map((project) => (
-            <Card key={project.id} className="flex flex-col gap-3 bg-base-100/80">
+            <Card key={project.id} className="flex flex-col gap-3 border-white/20 bg-white/45">
               <h3 className="text-xl font-semibold text-base-content">{project.title}</h3>
               <p className="text-base-content/70 line-clamp-3">{project.summary}</p>
               <Link to={`/projects/${project.id}`} className={buttonStyles('ghost', 'sm')}>
@@ -68,7 +71,7 @@ const ExplorePage = (): JSX.Element => {
             </Card>
           ))}
           {!filteredProjects.length && (
-            <Card className="bg-base-100/80 text-base-content/60">
+            <Card className="text-base-content/60">
               No encontré proyectos que coincidan {hasQuery ? `con “${query}”` : 'todavía'}.
             </Card>
           )}
@@ -84,7 +87,7 @@ const ExplorePage = (): JSX.Element => {
         </div>
         <div className="grid gap-4 md:grid-cols-2">
           {filteredPosts.map((post) => (
-            <Card key={post.id} className="flex flex-col gap-3 bg-base-100/80">
+            <Card key={post.id} className="flex flex-col gap-3 border-white/20 bg-white/45">
               <h3 className="text-xl font-semibold text-base-content">{post.title}</h3>
               <p className="text-base-content/70 line-clamp-3">{post.excerpt}</p>
               <Link to={`/posts/${post.slug}`} className={buttonStyles('ghost', 'sm')}>
@@ -93,7 +96,7 @@ const ExplorePage = (): JSX.Element => {
             </Card>
           ))}
           {!filteredPosts.length && (
-            <Card className="bg-base-100/80 text-base-content/60">No encontré artículos para esta búsqueda.</Card>
+            <Card className="text-base-content/60">No encontré artículos para esta búsqueda.</Card>
           )}
         </div>
       </div>
@@ -107,7 +110,7 @@ const ExplorePage = (): JSX.Element => {
         </div>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {filteredSkills.map((skill) => (
-            <Card key={skill.id} className="bg-base-100/80">
+            <Card key={skill.id} className="border-white/20 bg-white/45">
               <h3 className="text-lg font-semibold text-base-content">{skill.name}</h3>
               <p className="mt-2 text-sm text-base-content/70">{skill.description}</p>
               <span className="mt-4 inline-flex w-fit rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary">
@@ -116,7 +119,7 @@ const ExplorePage = (): JSX.Element => {
             </Card>
           ))}
           {!filteredSkills.length && (
-            <Card className="bg-base-100/80 text-base-content/60">Prueba con otra palabra clave.</Card>
+            <Card className="text-base-content/60">Prueba con otra palabra clave.</Card>
           )}
         </div>
       </div>

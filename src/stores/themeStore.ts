@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 
-type Theme = 'light' | 'dark';
+type Theme = 'lumen' | 'dark';
 
 interface ThemeState {
   theme: Theme;
@@ -12,12 +12,12 @@ interface ThemeState {
 const STORAGE_KEY = 'portfolio_theme';
 
 export const useThemeStore = create<ThemeState>((set, get) => ({
-  theme: 'light',
+  theme: 'lumen',
   initializeTheme: () => {
     if (typeof window === 'undefined') return;
     const storedTheme = window.localStorage.getItem(STORAGE_KEY) as Theme | null;
     const prefersDark = window.matchMedia?.('(prefers-color-scheme: dark)').matches ?? false;
-    const nextTheme = storedTheme ?? (prefersDark ? 'dark' : 'light');
+    const nextTheme = storedTheme ?? (prefersDark ? 'dark' : 'lumen');
     if (nextTheme !== get().theme) {
       set({ theme: nextTheme });
     }
@@ -30,7 +30,7 @@ export const useThemeStore = create<ThemeState>((set, get) => ({
   },
   toggleTheme: () => {
     const current = get().theme;
-    const nextTheme: Theme = current === 'light' ? 'dark' : 'light';
+    const nextTheme: Theme = current === 'lumen' ? 'dark' : 'lumen';
     if (typeof window !== 'undefined') {
       window.localStorage.setItem(STORAGE_KEY, nextTheme);
     }

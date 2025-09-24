@@ -24,12 +24,14 @@ const SkillsPage = (): JSX.Element => {
 
   return (
     <section className="space-y-10">
-      <header className="space-y-3">
-        <h1 className="text-4xl font-bold text-base-content">Mapa de habilidades</h1>
-        <p className="max-w-2xl text-base-content/70">
-          Una mirada a las tecnologías y procesos con los que disfruto construir productos. Desde ingeniería frontend hasta
-          diseño centrado en las personas.
-        </p>
+      <header className="relative overflow-hidden rounded-[2.5rem] border border-white/20 bg-white/40 px-6 py-10 text-base-content shadow-glow backdrop-blur-xl sm:px-12 dark:border-white/10 dark:bg-white/10">
+        <div className="pointer-events-none absolute inset-0 -z-10 bg-hero-glow opacity-70" aria-hidden="true" />
+        <div className="space-y-3">
+          <h1 className="text-4xl font-bold text-base-content md:text-5xl">Mapa de habilidades</h1>
+          <p className="max-w-2xl text-base-content/70">
+            Tecnologías, frameworks y rituales que sostienen cada proyecto. Desde arquitectura frontend hasta research continuo.
+          </p>
+        </div>
       </header>
 
       {error && (
@@ -38,10 +40,10 @@ const SkillsPage = (): JSX.Element => {
         </div>
       )}
 
-      <div className="space-y-8">
+      <div className="space-y-10">
         {Object.entries(groupedSkills).map(([category, categorySkills]) => (
-          <div key={category} className="space-y-4">
-            <div className="flex items-center justify-between">
+          <div key={category} className="space-y-4 rounded-[2rem] border border-white/20 bg-white/40 p-6 text-base-content shadow-glow backdrop-blur dark:border-white/10 dark:bg-white/5">
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
               <h2 className="text-2xl font-semibold text-base-content">{category}</h2>
               <span className="text-sm text-base-content/60">{categorySkills.length} skills</span>
             </div>

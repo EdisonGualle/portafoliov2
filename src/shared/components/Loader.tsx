@@ -6,9 +6,9 @@ interface LoaderProps {
 
 const Loader = ({ message = 'Cargando...', fullScreen = false, overlay = false }: LoaderProps): JSX.Element => {
   const containerClasses = fullScreen
-    ? 'fixed inset-0 z-40 flex items-center justify-center bg-base-100/80 backdrop-blur'
+    ? 'fixed inset-0 z-40 flex items-center justify-center bg-white/60 backdrop-blur dark:bg-midnightMuted/80'
     : overlay
-      ? 'absolute inset-0 z-30 flex items-center justify-center rounded-2xl bg-base-100/80 backdrop-blur'
+      ? 'absolute inset-0 z-30 flex items-center justify-center rounded-2xl bg-white/60 backdrop-blur dark:bg-midnightMuted/80'
       : 'flex w-full items-center justify-center py-10';
 
   return (

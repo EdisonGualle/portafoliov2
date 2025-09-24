@@ -4,6 +4,7 @@ import { buttonStyles } from '@shared/components/Button';
 const ThemeToggle = (): JSX.Element => {
   const { theme, toggleTheme } = useTheme();
   const isDark = theme === 'dark';
+  const label = isDark ? 'Modo oscuro' : 'Modo aurora';
 
   return (
     <button
@@ -13,7 +14,7 @@ const ThemeToggle = (): JSX.Element => {
       onClick={toggleTheme}
     >
       {isDark ? '🌙' : '☀️'}
-      <span className="ml-2 hidden text-sm sm:inline">{isDark ? 'Modo oscuro' : 'Modo claro'}</span>
+      <span className="ml-2 hidden text-sm sm:inline">{label}</span>
     </button>
   );
 };

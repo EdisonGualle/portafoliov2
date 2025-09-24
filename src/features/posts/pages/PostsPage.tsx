@@ -35,11 +35,14 @@ const PostsPage = (): JSX.Element => {
 
   return (
     <section className="space-y-10">
-      <header className="space-y-3">
-        <h1 className="text-4xl font-bold text-base-content">Ideas y aprendizajes</h1>
-        <p className="max-w-2xl text-base-content/70">
-          Reflexiones sobre arquitectura frontend, diseño de sistemas, accesibilidad y productividad creativa.
-        </p>
+      <header className="relative overflow-hidden rounded-[2.5rem] border border-white/20 bg-white/40 px-6 py-10 text-base-content shadow-glow backdrop-blur-xl sm:px-12 dark:border-white/10 dark:bg-white/10">
+        <div className="pointer-events-none absolute inset-0 -z-10 bg-hero-glow opacity-70" aria-hidden="true" />
+        <div className="space-y-3">
+          <h1 className="text-4xl font-bold text-base-content md:text-5xl">Ideas y aprendizajes</h1>
+          <p className="max-w-2xl text-base-content/70">
+            Reflexiones sobre arquitectura frontend, diseño de sistemas, accesibilidad y productividad creativa.
+          </p>
+        </div>
       </header>
 
       {error && (

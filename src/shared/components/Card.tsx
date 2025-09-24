@@ -26,15 +26,15 @@ const Card = ({
   return (
     <Component
       className={cn(
-        'group relative overflow-hidden rounded-2xl border border-base-200 bg-base-100 shadow-sm transition-all duration-300',
+        'group relative overflow-hidden rounded-2xl border border-white/25 bg-white/40 text-base-content shadow-md backdrop-blur transition-all duration-300 dark:border-white/10 dark:bg-white/5',
         hoverable &&
-          'hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/15 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary/40',
+          'hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary/40',
         paddingMap[padding],
         className
       )}
     >
       <div className="absolute inset-0 -z-10 opacity-0 transition-opacity duration-300 group-hover:opacity-100" aria-hidden="true">
-        <div className="h-full w-full bg-gradient-to-br from-primary/10 via-transparent to-accent/10" />
+        <div className="h-full w-full bg-gradient-to-br from-primary/15 via-transparent to-secondary/20" />
       </div>
       {children}
     </Component>

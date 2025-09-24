@@ -14,36 +14,39 @@ body {
   font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   min-height: 100vh;
   position: relative;
-  background: radial-gradient(circle at top left, rgba(59, 130, 246, 0.12), transparent 55%),
-    radial-gradient(circle at bottom right, rgba(249, 115, 22, 0.12), transparent 60%),
-    linear-gradient(180deg, rgba(15, 23, 42, 0.02) 0%, rgba(255, 255, 255, 0) 40%);
+  background-color: #050b1a;
+  background-image:
+    radial-gradient(circle at 12% 18%, rgba(124, 58, 237, 0.32), transparent 58%),
+    radial-gradient(circle at 82% 8%, rgba(34, 211, 238, 0.26), transparent 52%),
+    radial-gradient(circle at 50% 92%, rgba(249, 115, 22, 0.22), transparent 55%),
+    linear-gradient(160deg, rgba(15, 23, 42, 0.6) 0%, rgba(15, 23, 42, 0) 42%);
 }
 
 body::before,
 body::after {
   content: '';
   position: fixed;
-  width: 520px;
-  height: 520px;
+  width: 480px;
+  height: 480px;
   border-radius: 9999px;
   filter: blur(140px);
-  opacity: 0.35;
+  opacity: 0.4;
   pointer-events: none;
   z-index: -1;
-  animation: aurora 18s ease-in-out infinite;
+  animation: aurora 26s ease-in-out infinite;
 }
 
 body::before {
   top: -160px;
-  left: -120px;
-  background: radial-gradient(circle at center, rgba(79, 70, 229, 0.4), transparent 65%);
+  left: -140px;
+  background: radial-gradient(circle at center, rgba(124, 58, 237, 0.55), transparent 70%);
 }
 
 body::after {
-  bottom: -160px;
-  right: -80px;
-  background: radial-gradient(circle at center, rgba(251, 191, 36, 0.45), transparent 60%);
-  animation-delay: 6s;
+  bottom: -180px;
+  right: -120px;
+  background: radial-gradient(circle at center, rgba(34, 211, 238, 0.45), transparent 65%);
+  animation-delay: 8s;
 }
 
 a {
@@ -55,38 +58,57 @@ a {
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-base-200;
+  @apply bg-midnightMuted;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-primary/60 rounded-full;
+  @apply rounded-full bg-primary/60;
+}
+
+[data-theme='lumen'] body {
+  background-color: #f8fafc;
+  background-image:
+    radial-gradient(circle at 20% 10%, rgba(124, 58, 237, 0.12), transparent 55%),
+    radial-gradient(circle at 88% 12%, rgba(34, 211, 238, 0.15), transparent 65%),
+    linear-gradient(180deg, rgba(237, 233, 254, 0.4) 0%, rgba(248, 250, 252, 0) 40%);
+}
+
+[data-theme='lumen'] body::before {
+  background: radial-gradient(circle at center, rgba(124, 58, 237, 0.35), transparent 70%);
+}
+
+[data-theme='lumen'] body::after {
+  background: radial-gradient(circle at center, rgba(34, 211, 238, 0.28), transparent 65%);
+}
+
+[data-theme='dark'] body {
+  background-color: #050b1a;
+  background-image:
+    radial-gradient(circle at 12% 18%, rgba(124, 58, 237, 0.32), transparent 58%),
+    radial-gradient(circle at 82% 8%, rgba(34, 211, 238, 0.26), transparent 52%),
+    radial-gradient(circle at 50% 92%, rgba(249, 115, 22, 0.22), transparent 55%),
+    linear-gradient(160deg, rgba(15, 23, 42, 0.6) 0%, rgba(15, 23, 42, 0) 42%);
+}
+
+[data-theme='dark'] body::before {
+  background: radial-gradient(circle at center, rgba(168, 85, 247, 0.5), transparent 70%);
+}
+
+[data-theme='dark'] body::after {
+  background: radial-gradient(circle at center, rgba(34, 211, 238, 0.45), transparent 65%);
 }
 
 @keyframes aurora {
   0% {
     transform: translate3d(0, 0, 0) scale(1);
-    opacity: 0.28;
+    opacity: 0.38;
   }
   50% {
-    transform: translate3d(5%, -8%, 0) scale(1.05);
-    opacity: 0.45;
+    transform: translate3d(4%, -6%, 0) scale(1.05);
+    opacity: 0.55;
   }
   100% {
     transform: translate3d(0, 0, 0) scale(1);
-    opacity: 0.28;
+    opacity: 0.38;
   }
-}
-
-[data-theme='dark'] body {
-  background: radial-gradient(circle at top left, rgba(129, 140, 248, 0.2), transparent 55%),
-    radial-gradient(circle at bottom right, rgba(251, 191, 36, 0.18), transparent 60%),
-    linear-gradient(180deg, rgba(15, 23, 42, 0.08) 0%, rgba(15, 23, 42, 0) 45%);
-}
-
-[data-theme='dark'] body::before {
-  background: radial-gradient(circle at center, rgba(129, 140, 248, 0.55), transparent 65%);
-}
-
-[data-theme='dark'] body::after {
-  background: radial-gradient(circle at center, rgba(251, 191, 36, 0.35), transparent 60%);
 }

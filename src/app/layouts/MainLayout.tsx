@@ -20,11 +20,13 @@ const MainLayout = () => {
   const isNavigating = navigation.state === 'loading';
 
   return (
-    <div className="min-h-screen bg-base-100 text-base-content transition-colors">
+    <div className="relative min-h-screen overflow-hidden bg-transparent text-base-content transition-colors">
+      <div className="pointer-events-none absolute inset-0 -z-20 bg-mesh-gradient" aria-hidden="true" />
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-grid-slate bg-[length:24px_24px] opacity-30" aria-hidden="true" />
       <ScrollProgressBar />
       <Navbar />
       <Sidebar />
-      <main className="relative mx-auto flex min-h-[70vh] max-w-6xl flex-1 flex-col px-4 pb-20 pt-24 md:px-8">
+      <main className="relative mx-auto flex min-h-[70vh] w-full max-w-6xl flex-1 flex-col px-4 pb-20 pt-28 md:px-8">
         {isNavigating && <Loader overlay message="Actualizando sección..." />}
         <div className={isNavigating ? 'pointer-events-none opacity-50' : ''}>
           <Outlet />

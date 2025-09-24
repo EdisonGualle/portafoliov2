@@ -13,7 +13,7 @@ interface PostCardProps {
 const PostCard = ({ post }: PostCardProps): JSX.Element => {
   return (
     <Reveal>
-      <Card className="flex h-full flex-col gap-5">
+      <Card className="flex h-full flex-col gap-5 border-white/30 bg-white/45 shadow-glow dark:border-white/10 dark:bg-white/5">
         <div className="flex items-center justify-between text-sm text-base-content/60">
           <span>{formatDate(post.publishedAt)}</span>
           <span>{post.readingTime}</span>
@@ -24,7 +24,7 @@ const PostCard = ({ post }: PostCardProps): JSX.Element => {
         </div>
         <div className="flex flex-wrap gap-2">
           {post.tags.map((tag) => (
-            <span key={tag} className="badge badge-sm badge-primary/80 bg-primary/10">
+            <span key={tag} className="badge badge-sm border border-primary/30 bg-primary/10 text-primary">
               {tag}
             </span>
           ))}

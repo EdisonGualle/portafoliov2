@@ -9,7 +9,7 @@ interface PostListProps {
 const PostList = ({ posts }: PostListProps): JSX.Element => {
   if (!posts.length) {
     return (
-      <div className="rounded-2xl border border-dashed border-base-300 bg-base-200/60 p-10 text-center">
+      <div className="rounded-3xl border border-dashed border-white/30 bg-white/40 p-10 text-center text-base-content shadow-glow backdrop-blur dark:border-white/10 dark:bg-white/5">
         <p className="text-base font-medium text-base-content/70">Aún no hay artículos disponibles.</p>
       </div>
     );

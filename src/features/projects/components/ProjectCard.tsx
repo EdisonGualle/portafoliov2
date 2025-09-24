@@ -13,11 +13,11 @@ const ProjectCard = ({ project }: ProjectCardProps): JSX.Element => {
   return (
     <Reveal>
       <ScaleOnHover className="h-full">
-        <Card className="flex h-full flex-col gap-6">
+        <Card className="flex h-full flex-col gap-6 border-white/30 bg-white/45 shadow-glow dark:border-white/10 dark:bg-white/5">
           <div className="relative overflow-hidden rounded-xl">
             <img src={project.cover} alt={project.title} className="h-52 w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
             {project.highlight && (
-              <span className="absolute left-4 top-4 rounded-full bg-base-100 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary">
+              <span className="absolute left-4 top-4 rounded-full border border-primary/40 bg-primary/15 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary shadow-glow">
                 {project.highlight}
               </span>
             )}
@@ -29,7 +29,7 @@ const ProjectCard = ({ project }: ProjectCardProps): JSX.Element => {
             </div>
             <div className="flex flex-wrap gap-2">
               {project.technologies.map((tech) => (
-                <span key={tech} className="badge badge-outline badge-sm">
+                <span key={tech} className="badge badge-outline badge-sm border-primary/30 text-primary">
                   {tech}
                 </span>
               ))}
