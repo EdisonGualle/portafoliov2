@@ -4,10 +4,10 @@ import { experienceTimeline } from '@shared/constants/timeline';
 import { Reveal } from 'react-bits';
 
 const principles = [
-  'Estrategia y narrativa conectadas a métricas',
-  'Accesibilidad diseñada desde el primer trazo',
-  'Colaboración radical con equipos multidisciplinarios',
-  'Entrega continua con diseño de sistemas vivos'
+  'Estrategia basada en datos con impacto tangible',
+  'Accesibilidad integrada desde el primer sprint',
+  'Comunicación clara entre producto, diseño y desarrollo',
+  'Entrega continua respaldada por sistemas escalables'
 ];
 
 const AboutPage = (): JSX.Element => {
@@ -37,10 +37,10 @@ const AboutPage = (): JSX.Element => {
         <Card className="space-y-4 border-white/25 bg-white/50 text-base-content dark:border-white/10 dark:bg-white/5">
           <h2 className="text-2xl font-semibold text-base-content">Lo que me mueve</h2>
           <p className="text-base-content/70">
-            Creo que el mejor software se construye cuando diseño y tecnología trabajan en sincronía. Me encanta traducir conversaciones complejas en experiencias intuitivas y diseñar sistemas que evolucionen en el tiempo.
+            Creo que el mejor software se construye cuando estrategia, diseño y código avanzan en conjunto. Disfruto transformar conversaciones complejas en interfaces intuitivas y preparar a los equipos para iterar con autonomía.
           </p>
           <p className="text-base-content/70">
-            Fuera del código, colecciono referencias visuales, compongo música en sintetizadores analógicos y lleno cuadernos con wireframes y patrones.
+            Fuera del teclado, me encontrarás explorando sintetizadores, entrenando calistenia y documentando patrones de interacción en mi libreta de ideas.
           </p>
         </Card>
         <Card className="space-y-4 border-white/25 bg-white/50 text-base-content dark:border-white/10 dark:bg-white/5">

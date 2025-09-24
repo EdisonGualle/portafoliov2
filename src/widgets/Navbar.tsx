@@ -18,10 +18,10 @@ const Navbar = (): JSX.Element => {
         <div className="flex items-center justify-between gap-4">
           <Link to="/" className="group flex items-center gap-2 text-lg font-semibold text-base-content">
             <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-br from-primary via-aurora to-secondary text-sm font-bold text-primary-foreground shadow-glow">
-              LM
+              EG
             </span>
             <span className="hidden bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent sm:inline">
-              Laura Méndez
+              Edison Gualle
             </span>
           </Link>
           <nav className="hidden items-center gap-1 rounded-2xl border border-white/20 bg-white/40 px-2 py-1 text-sm shadow-sm dark:border-white/10 dark:bg-white/10 md:flex">
@@ -53,7 +53,7 @@ const Navbar = (): JSX.Element => {
             </div>
             <ThemeToggle />
             <Link to="/contact" className="hidden rounded-xl border border-primary/40 bg-primary/10 px-4 py-2 text-sm font-medium text-primary shadow-glow hover:bg-primary/15 sm:inline-flex">
-              Hablemos
+              Conversemos
             </Link>
             <button
               type="button"

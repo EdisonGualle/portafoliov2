@@ -17,10 +17,10 @@ const Footer = (): JSX.Element => {
           <div className="space-y-4">
             <Link to="/" className="inline-flex items-center gap-3 text-lg font-semibold">
               <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-primary via-aurora to-secondary text-primary-foreground shadow-glow">
-                LM
+                EG
               </span>
               <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-                Laura Méndez
+                Edison Gualle
               </span>
             </Link>
             <p className="text-base text-base-content/80">
@@ -61,8 +61,8 @@ const Footer = (): JSX.Element => {
           </div>
         </div>
         <div className="mt-10 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs text-base-content/60 md:flex-row md:items-center md:justify-between">
-          <p>Disponible para colaboraciones selectas · hola@lauramendez.dev</p>
-          <p>© {new Date().getFullYear()} Laura Méndez · Crafted with intención y tecnología.</p>
+          <p>Disponible para colaboraciones selectas · hola@edisongualle.dev</p>
+          <p>© {new Date().getFullYear()} Edison Gualle · Crafted with intención y tecnología.</p>
         </div>
       </div>
     </footer>

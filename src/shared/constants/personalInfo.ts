@@ -1,21 +1,21 @@
 export const personalInfo = {
-  name: 'Laura Méndez',
-  role: 'Frontend Engineer',
-  heroTitle: 'Diseño experiencias digitales memorables.',
+  name: 'Edison Gualle',
+  role: 'Frontend & Product Engineer',
+  heroTitle: 'Orquesto interfaces humanas con código elegante.',
   heroSubtitle:
-    'Desarrollo productos web modernos con foco en rendimiento, accesibilidad y detalle visual. Cada proyecto es una oportunidad para crear algo significativo.',
+    'Construyo plataformas web con propósito, donde estrategia, rendimiento y estética trabajan al servicio de experiencias memorables.',
   ctaPrimary: {
     label: 'Explora mis proyectos',
     href: '/projects'
   },
   ctaSecondary: {
-    label: 'Hablemos',
+    label: 'Conversemos',
     href: '/contact'
   },
   about: {
     title: 'Transformo ideas en productos consistentes',
     description:
-      'Combino un enfoque estratégico con sensibilidad estética para construir soluciones escalables. Me especializo en interfaces dinámicas, sistemas de diseño y experiencias accesibles.'
+      'Combino pensamiento sistémico con sensibilidad visual para crear soluciones escalables. Me especializo en interfaces dinámicas, diseño centrado en datos y experiencias accesibles.'
   },
-  contactEmail: 'hola@lauramendez.dev'
+  contactEmail: 'hola@edisongualle.dev'
 };
