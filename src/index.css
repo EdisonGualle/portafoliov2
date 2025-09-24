@@ -77,6 +77,21 @@ a {
   }
 }
 
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@layer utilities {
+  .animate-marquee {
+    animation: marquee 28s linear infinite;
+  }
+}
+
 [data-theme='dark'] body {
   background: radial-gradient(circle at top left, rgba(129, 140, 248, 0.2), transparent 55%),
     radial-gradient(circle at bottom right, rgba(251, 191, 36, 0.18), transparent 60%),
