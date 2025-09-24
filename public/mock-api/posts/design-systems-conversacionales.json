@@ -1,0 +1,11 @@
+{
+  "id": "design-systems-conversacionales",
+  "slug": "design-systems-conversacionales",
+  "title": "Design systems conversacionales",
+  "excerpt": "Cómo diseñar componentes que dialogan con las personas y se adaptan al contexto.",
+  "publishedAt": "2024-11-18",
+  "tags": ["Design Systems", "UX Writing"],
+  "readingTime": "6 min",
+  "heroImage": "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1600&q=80",
+  "content": "## ¿Por qué hablar de sistemas conversacionales?\n\nLos componentes ya no son bloques estáticos. **Cada interacción cuenta una micro historia** donde tono, intención y feedback importan.\n\n### Tres principios clave\n- Diseña tokens que representen voz y tono.\n- Crea estados que anticipen lo que la persona necesita.\n- Evalúa la conversación completa, no solo la pantalla.\n\n> Un sistema conversacional se siente humano cuando responde con empatía y claridad.\n\n### Checklist accionable\n1. Define la personalidad de tu producto.\n2. Documenta cómo cambia el lenguaje según el contexto.\n3. Prototipa microdialogos antes de pasarlos a producción.\n\nAl final, un design system conversacional no reemplaza a las personas, las potencia."
+}

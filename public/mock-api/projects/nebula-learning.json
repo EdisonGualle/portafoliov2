@@ -1,0 +1,25 @@
+{
+  "id": "nebula-learning",
+  "slug": "nebula-learning",
+  "title": "Nebula Learning",
+  "summary": "Plataforma educativa con rutas personalizadas y gamificación.",
+  "description": "Sistema de aprendizaje que adapta contenido en tiempo real según el progreso del usuario.",
+  "longDescription": "Nebula Learning mezcla storytelling y aprendizaje adaptativo. Diseñé misiones interactivas que evolucionan según el ritmo de cada persona.",
+  "technologies": ["React", "Zustand", "Supabase", "TailwindCSS"],
+  "tags": ["EdTech", "Gamificación"],
+  "cover": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80",
+  "liveUrl": "https://nebula-learning.dev",
+  "repoUrl": "https://github.com/example/nebula-learning",
+  "highlight": "Aprendizaje adaptativo",
+  "problem": "Las plataformas existentes no motivaban a estudiantes a continuar sus rutas de aprendizaje.",
+  "solution": "Implementé un motor de progresión con checkpoints visuales, paneles motivacionales y feedback instantáneo.",
+  "outcomes": [
+    "Incremento del engagement diario en un 52%",
+    "Reducción del abandono en el onboarding a la mitad",
+    "Escalabilidad para crear nuevas rutas en cuestión de minutos"
+  ],
+  "insights": [
+    "El aprendizaje mejora cuando celebramos los micro avances.",
+    "Las visualizaciones de progreso deben ser accesibles y motivadoras."
+  ]
+}

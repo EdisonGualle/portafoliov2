@@ -1,0 +1,44 @@
+[
+  {
+    "id": "atlas-dashboard",
+    "slug": "atlas-dashboard",
+    "title": "Atlas Dashboard",
+    "summary": "Suite analítica en tiempo real para equipos de producto.",
+    "description": "Plataforma modular que centraliza métricas, experimentos A/B y feedback de usuarios.",
+    "technologies": ["React", "Zustand", "TailwindCSS", "D3.js"],
+    "tags": ["Product Analytics", "Data Visualization"],
+    "cover": "https://images.unsplash.com/photo-1523475472560-d2df97ec485c?auto=format&fit=crop&w=1200&q=80",
+    "liveUrl": "https://atlas-dashboard.app",
+    "repoUrl": "https://github.com/example/atlas-dashboard",
+    "featured": true,
+    "highlight": "Dashboard interactivo"
+  },
+  {
+    "id": "aurora-commerce",
+    "slug": "aurora-commerce",
+    "title": "Aurora Commerce",
+    "summary": "Experiencia e-commerce headless con personalización dinámica.",
+    "description": "Arquitectura composable commerce con storefront ultra rápida.",
+    "technologies": ["React", "Vite", "GraphQL", "TailwindCSS"],
+    "tags": ["E-commerce", "Performance"],
+    "cover": "https://images.unsplash.com/photo-1515169067865-5387ec356754?auto=format&fit=crop&w=1200&q=80",
+    "liveUrl": "https://aurora-commerce.dev",
+    "repoUrl": "https://github.com/example/aurora-commerce",
+    "featured": true,
+    "highlight": "Headless storefront"
+  },
+  {
+    "id": "nebula-learning",
+    "slug": "nebula-learning",
+    "title": "Nebula Learning",
+    "summary": "Plataforma educativa con rutas personalizadas y gamificación.",
+    "description": "Sistema de aprendizaje que adapta contenido en tiempo real según el progreso del usuario.",
+    "technologies": ["React", "Zustand", "Supabase", "TailwindCSS"],
+    "tags": ["EdTech", "Gamificación"],
+    "cover": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
+    "liveUrl": "https://nebula-learning.dev",
+    "repoUrl": "https://github.com/example/nebula-learning",
+    "featured": false,
+    "highlight": "Aprendizaje adaptativo"
+  }
+]
