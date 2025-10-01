@@ -15,10 +15,17 @@ const config: Config = {
           DEFAULT: '#6366f1',
           foreground: '#ffffff'
         },
+        secondary: {
+          DEFAULT: '#22d3ee',
+          foreground: '#0f172a'
+        },
         accent: {
           DEFAULT: '#f97316',
           foreground: '#0f172a'
         }
+      },
+      backgroundImage: {
+        'grid-signal': 'linear-gradient(90deg, rgba(99,102,241,0.08) 1px, transparent 1px), linear-gradient(180deg, rgba(99,102,241,0.08) 1px, transparent 1px)'
       }
     }
   },
