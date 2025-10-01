@@ -1,6 +1,8 @@
 # Liquidación de Asignaciones
 
-Este proyecto contiene la fase inicial (UI estática) del módulo de **Liquidación de Asignaciones a Asociaciones** construido con React 19, Vite, TailwindCSS y DaisyUI.
+Este proyecto contiene el módulo de **Liquidación de Asignaciones a Asociaciones** construido con React 19, Vite, TailwindCSS y DaisyUI.
+
+Actualmente se han completado las fases de maquetación y la integración inicial con servicios HTTP (GET/POST/PUT) utilizando Axios y un backend simulado con `axios-mock-adapter` para facilitar el desarrollo local.
 
 ## Scripts disponibles
 
@@ -26,4 +28,14 @@ src/
 └── services/
 ```
 
-La fase 1 maqueta la vista `/liquidaciones` con datos mock y componentes reutilizables listos para las siguientes fases de integración y validaciones.
+### Mock API para desarrollo
+
+Para mantener el flujo de trabajo desacoplado del backend definitivo, en modo desarrollo (`npm run dev`) se habilita un mock API basado en `axios-mock-adapter` que responde a las rutas:
+
+- `GET /liquidaciones`: devuelve el listado de liquidaciones.
+- `POST /liquidaciones`: registra una nueva liquidación.
+- `PUT /liquidaciones/:id`: actualiza campos clave (monto asignado/gastado, estado, descripción).
+
+Las respuestas utilizan los datos de `src/features/liquidaciones/mock/liquidacionesData.ts`, que pueden ampliarse según las necesidades de QA o demos.
+
+Para conectar la aplicación con un backend real, define la variable de entorno `VITE_API_URL` en un archivo `.env` y la aplicación utilizará esa URL como `baseURL` por defecto para Axios.

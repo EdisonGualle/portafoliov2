@@ -1,7 +1,8 @@
-import { useLiquidacionesStore } from '../stores/liquidaciones.store';
+import { useLiquidaciones } from '../hooks/useLiquidaciones';
 
 export const LiquidacionesHeader = () => {
-  const toggleModalNueva = useLiquidacionesStore((state) => state.toggleModalNueva);
+  const { toggleModalNueva, fetchLiquidaciones, fetchState } = useLiquidaciones();
+  const isRefreshing = fetchState.status === 'loading';
 
   return (
     <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
@@ -12,7 +13,15 @@ export const LiquidacionesHeader = () => {
         </p>
       </div>
       <div className="flex gap-2">
-        <button className="btn btn-outline btn-sm">Exportar</button>
+        <button
+          className="btn btn-outline btn-sm"
+          onClick={() => {
+            void fetchLiquidaciones();
+          }}
+          disabled={isRefreshing}
+        >
+          {isRefreshing ? <span className="loading loading-spinner" /> : 'Sincronizar'}
+        </button>
         <button className="btn btn-primary" onClick={() => toggleModalNueva(true)}>
           Nueva Liquidación
         </button>

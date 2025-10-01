@@ -11,10 +11,19 @@ if (!rootElement) {
   throw new Error('Root element not found');
 }
 
-createRoot(rootElement).render(
-  <StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </StrictMode>
-);
+const bootstrap = async () => {
+  if (import.meta.env.DEV) {
+    const { setupHttpMocks } = await import('./mocks/http');
+    setupHttpMocks();
+  }
+
+  createRoot(rootElement).render(
+    <StrictMode>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </StrictMode>
+  );
+};
+
+void bootstrap();
